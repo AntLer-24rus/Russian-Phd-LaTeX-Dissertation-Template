@@ -25,3 +25,15 @@
 \formbytotal{totalcount@figure}{рисун}{ок}{ка}{ков} и
 \formbytotal{totalcount@table}{таблиц}{у}{ы}{}.   Список литературы содержит  
 \formbytotal{citenum}{наименован}{ие}{ия}{ий}.
+
+Первая глава
+\the\numexpr\getpagerefnumber{chapt2}-\getpagerefnumber{chapt1}\relax~с.
+
+Вторая глава
+\the\numexpr\getpagerefnumber{chapt3}-\getpagerefnumber{chapt2}\relax~с.
+
+Третья глава
+\the\numexpr\getpagerefnumber{conclusion}-\getpagerefnumber{chapt3}\relax~с.
+
+%Четвертая глава
+%\formbytotal{\the\numexpr\getpagerefnumber{conclusion}-\getpagerefnumber{chapt4}\relax}{страниц}{у}{ы}{}
