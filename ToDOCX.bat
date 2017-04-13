@@ -1,0 +1,2 @@
+"C:\Program Files (x86)\Pandoc\pandoc.exe" --standalone --parse-raw --smart --no-tex-ligatures --trace dissertation.tex --default-image-extension=png --bibliography="biblio/othercites.bib" --listings --number-sections -o dissertation.docx
+pause
