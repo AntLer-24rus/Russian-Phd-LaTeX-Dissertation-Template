@@ -4,3 +4,39 @@
 %%% Для добавления Стр. над номерами страниц в оглавлении
 %%% http://tex.stackexchange.com/a/306950
 \usepackage{afterpage}
+
+
+% Блок схемы
+
+\usepackage{tikz}
+\usetikzlibrary{shapes, arrows, chains}
+\pgfkeys{/tikz/.cd,% to set the path
+	a/.initial=20mm, % initial value
+	a/.get=\a, % to get the value from a macro
+	a/.store in=\a, % to store the value into a macro
+}
+\tikzstyle{block} = [
+	rectangle,
+	aspect = 1.5,
+	draw=black,
+	align=center,
+	text width = 1.5*\a,
+	minimum height = \a,
+	minimum width = 1.5*\a,]
+\tikzstyle{start_stop} = [
+	rectangle,
+	aspect = 1.5,
+	rounded corners=0.25*\a,
+	draw=black,
+	align=center,
+	text width = 1.5*\a,
+	minimum height = 0.5*\a,
+	minimum width = 1.5*\a,]
+\tikzstyle{if} = [
+	diamond,
+	aspect = 1.5,
+	draw=black,
+	align=center,
+	text width = 1*\a,
+	minimum height = 0.5*\a,
+	minimum width = 1.5*\a,]	
