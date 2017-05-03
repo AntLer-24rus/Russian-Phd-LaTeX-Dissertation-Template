@@ -3,19 +3,41 @@
 
 В данном приложении приведены все функции для предварительной обработки эксперементальных данных.
 
+\section{Функция удаления постоянной составляющей}\label{Appendix:FPE:COF}
+
+\noindent\textbf{Входные параметры:}
+\begin{itemize}[leftmargin=1.25cm]
+	\item [] \lstinline{x} "--- массив измеренных значений (сигнал переходного процесса).
+\end{itemize}
+\textbf{Выходные параметры:}
+\begin{itemize}[leftmargin=1.25cm]
+	\item [] \lstinline{ix} "--- массив измеренных значений за вычетом постоянной составляющей.
+\end{itemize}
+
+\begin{lstlisting}[label={list:clearOffSet},caption={Функция удаления постоянной составляющей}]
+function ix = clearOffSet(x)
+	N = size(x,2);
+		if mod(N, 2) ~= 0
+			x(end) = [];
+		end
+	X = fftshift(fft(x));
+	X(end/2+1) = 0;
+	ix = ifft(ifftshift(X));
+\end{lstlisting}
+
 \section{Функция отброса грубых ошибок}\label{Appendix:FPE:DGE}
 
 \noindent\textbf{Входные параметры:}
 \begin{itemize}[leftmargin=1.25cm]
-	\item [] \lstinline{y\_in} "--- массив измерененых значений (сигнал переходного процесса);
+	\item [] \lstinline{y_in} "--- массив измеренных значений (сигнал переходного процесса);
 	\item [] \lstinline{f} "--- выбор режима работы: 1 "--- анализировать точки попавшие во вторую группу, 0 "--- анализировать только точки попавшие в третью группу.
 \end{itemize}
 \textbf{Выходные параметры:}
 \begin{itemize}[leftmargin=1.25cm]
-	\item [] \lstinline{out} "--- индексный массив с 0 и 1 указывающий индесы отбрасываемых точек.
+	\item [] \lstinline{out} "--- индексный массив с 0 и 1 указывающий индексы отбрасываемых точек.
 \end{itemize}
 
-\begin{lstlisting}[label={list:DropGrossError}]
+\begin{lstlisting}[label={list:DropGrossError},caption={Функция отброса грубых ошибок}]
 	function out = DropGrossError(y_in, f)
 		p_l = 5;    l=1;
 		p_r = 0.1;  r=2;
