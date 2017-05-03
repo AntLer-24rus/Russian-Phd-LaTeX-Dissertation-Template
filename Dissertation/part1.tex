@@ -65,30 +65,28 @@
 
 \todo{Расписать то что представлено в таблицах}
 
+\renewcommand\tabularxcolumn[1]{>{\centering}m{#1}}
+
 \begin{table} [ht]%
 	\centering
 	\caption{Сравнение чувствительных элементов}%
 	\label{tbl:SensItem}% label всегда желательно идти после caption
-	\begin{SingleSpace}
-		\setlength\extrarowheight{5pt} %вот этим управляем расстоянием между рядами, \arraystretch даёт неудачный результат
-		\setlength{\tymin}{1.9cm}% минимальная ширина столбца
-		\begin{tabulary}{\textwidth}{|>{\zz}L | >{\zz}C | >{\zz}C | >{\zz}C | >{\zz}C@{}|}
-			\hline
-			\multirow{2}{*}{Критерии}&\multicolumn{4}{ c |}{Чувствительные элементы} \\
-			\cline{2-5}
-			&Тензорезистивные&Пьезоэлектрические&Вибрационно-частотные&Индуктивные \\
-			\hline
-			\hline
-			Точность преобразования	&$+$&$+$&$+$&$-$ \\
-			Стоимость				&$+$&$-$&$-$&$-$ \\
-			Динамические нагрузки	&$+$&$+$&$+$&$+$ \\
-			Статические нагрузки	&$+$&$-$&$+$&$+$ \\
-			Линейная характеристика	&$+$&$-$&$-$&$-$ \\
-			Надёжность				&$+$&$-$&$-$&$-$ \\
-			Доступность				&$+$&$-$&$-$&$+$ \\
-			\hline
-		\end{tabulary}%
-	\end{SingleSpace}
+	\begin{tabularx}{\textwidth}{|p{3cm}|*4{X|}}
+		\hline
+		\multirow{2}{*}{Критерии}&\multicolumn{4}{ c |}{Чувствительные элементы} \tabularnewline
+		\cline{2-5}
+		&Тензорезистивные&Пьезоэлектрические&Вибрационно-частотные&Индуктивные \tabularnewline
+		\hline
+		\hline
+		Точность преобразования	&$+$&$+$&$+$&$-$ \tabularnewline
+		Стоимость				&$+$&$-$&$-$&$-$ \tabularnewline
+		Динамические нагрузки	&$+$&$+$&$+$&$+$ \tabularnewline
+		Статические нагрузки	&$+$&$-$&$+$&$+$ \tabularnewline
+		Линейная характеристика	&$+$&$-$&$-$&$-$ \tabularnewline
+		Надёжность				&$+$&$-$&$-$&$-$ \tabularnewline
+		Доступность				&$+$&$-$&$-$&$+$ \tabularnewline
+		\hline
+	\end{tabularx}	
 \end{table}
 
 \section{Основные выводы и задачи исследований}  \label{sect1_4}

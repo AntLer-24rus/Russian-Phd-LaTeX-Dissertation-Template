@@ -82,28 +82,31 @@ K_{\text{ВАР}}=\frac{\sigma_x}{\bar{x}}\cdot100\%
 \end{equation}
 
 Далее с помощью соотношения: $ \frac{K_{\text{ДОП}}}{K_{\text{ВАР}}} $, где $ K_{\text{ДОП}} $ "--- коэффициент допустимого отклонения (примем 12~\%, для получения надежности экспериментальных результатов), $ K_{\text{ВАР}} $ "--- коэффициент вариации, и таблицы \ref{tbl:NOpitov} определим необходимое количество повторений одного опыта
+
+
+
 \begin{table} [htbp]%
 	\centering
 	\caption{Определение количества опытов с надежностью 0,95}%
 	\label{tbl:NOpitov}% label всегда желательно идти после caption
-	\begin{tabular}{| m{4cm} | m{4cm} || m{4cm} | m{4cm}@{}l |}
+	\begin{tabularx}{\textwidth}{*2{|X}||*2{X|}}
 		\hline
-		\centering $ \frac{K_{\text{ДОП}}}{K_{\text{ВАР}}} $ & \centering Необходимое число опытов &
-		\centering $ \frac{K_{\text{ДОП}}}{K_{\text{ВАР}}} $ & \centering Необходимое число опытов & \\
+		 $ \frac{K_{\text{ДОП}}}{K_{\text{ВАР}}} $ &  Необходимое число опытов &
+		 $ \frac{K_{\text{ДОП}}}{K_{\text{ВАР}}} $ &  Необходимое число опытов  \tabularnewline
 		\hline
 		\hline
-		\centering 2,000	&\centering 1	&\centering 0,591	&\centering 11 &\\
-		\centering 1,389	&\centering 2	&\centering 0,568	&\centering 12 &\\
-		\centering 1,132	&\centering 3	&\centering 0,544	&\centering 13 &\\
-		\centering 0,980	&\centering 4	&\centering 0,524	&\centering 14 &\\
-		\centering 0,876	&\centering 5	&\centering 0,506	&\centering 15 &\\
-		\centering 0,800	&\centering 6	&\centering 0,490	&\centering 16 &\\
-		\centering 0,741	&\centering 7	&\centering 0,475	&\centering 17 &\\
-		\centering 0,693	&\centering 8	&\centering 0,462	&\centering 18 &\\
-		\centering 0,653	&\centering 9	&\centering 0,450	&\centering 19 &\\
-		\centering 0,620	&\centering 10	&\centering 0,438	&\centering 20 &\\
+		2,000	& 1	& 0,591	& 11 \tabularnewline
+		1,389	& 2	& 0,568	& 12 \tabularnewline
+		1,132	& 3	& 0,544	& 13 \tabularnewline
+		0,980	& 4	& 0,524	& 14 \tabularnewline
+		0,876	& 5	& 0,506	& 15 \tabularnewline
+		0,800	& 6	& 0,490	& 16 \tabularnewline
+		0,741	& 7	& 0,475	& 17 \tabularnewline
+		0,693	& 8	& 0,462	& 18 \tabularnewline
+		0,653	& 9	& 0,450	& 19 \tabularnewline
+		0,620	& 10& 0,438	& 20 \tabularnewline
 		\hline
-	\end{tabular}%
+	\end{tabularx}%
 \end{table}
 
 Для уточнения числа опытов при каждой комбинации факторов следует предварительно провести 20 опытов при неизменных параметрах режима резания.
